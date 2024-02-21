@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwoFigures", "TwoFigures\TwoFigures.csproj", "{5BB8FAF5-37DB-4891-915B-D09BBB05B5B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwoFigures.Test", "TwoFigures.Test\TwoFigures.Test.csproj", "{2173DCCE-D903-4D7D-9C89-9AA7381F2802}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5BB8FAF5-37DB-4891-915B-D09BBB05B5B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BB8FAF5-37DB-4891-915B-D09BBB05B5B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BB8FAF5-37DB-4891-915B-D09BBB05B5B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BB8FAF5-37DB-4891-915B-D09BBB05B5B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2173DCCE-D903-4D7D-9C89-9AA7381F2802}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2173DCCE-D903-4D7D-9C89-9AA7381F2802}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2173DCCE-D903-4D7D-9C89-9AA7381F2802}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2173DCCE-D903-4D7D-9C89-9AA7381F2802}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B0572455-E802-4BD3-8C09-6F70E5624D79}
+	EndGlobalSection
+EndGlobal
