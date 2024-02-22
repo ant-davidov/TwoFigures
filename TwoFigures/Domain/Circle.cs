@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TwoFigures.Domain.AbstractClass;
 using TwoFigures.Domain.Interfaces;
 
 namespace TwoFigures.Domain
 {
-    public record Circle : IFigure
+    public record Circle : AbstractFigure
     {
         private double area = 0;
         public double Radius { get; init; }
-        public double Area
+        public override double Area
         {
             get
             {

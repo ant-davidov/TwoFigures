@@ -1,7 +1,8 @@
 ﻿using TwoFigures.Domain;
+using TwoFigures.Domain.AbstractClass;
 using TwoFigures.Domain.Interfaces;
 
-IFigure[] figures =
+AbstractFigure[] figures =
     {
       new Triangle(3, 4, 5),
       new Circle(4)

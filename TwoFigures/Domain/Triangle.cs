@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TwoFigures.Domain.AbstractClass;
 using TwoFigures.Domain.Interfaces;
 
 namespace TwoFigures.Domain
 {
-    public record Triangle : IFigure
+    public record Triangle : AbstractFigure
     {
         private double area = 0;
         public double A { get; init; }
         public double B { get; init; }
         public double C { get; init; }
-        public double Area
+        public override double Area
         {
             get
             {
