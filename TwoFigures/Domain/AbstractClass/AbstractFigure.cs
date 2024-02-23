@@ -14,11 +14,8 @@ namespace TwoFigures.Domain.AbstractClass
         {
             get
             {
-                if (area == 0)
-                {
+                if (area == 0) 
                     area = CalculateArea();
-                    return area;
-                }
                 return area;
             }
         }

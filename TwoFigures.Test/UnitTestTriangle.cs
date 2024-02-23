@@ -90,7 +90,7 @@ namespace TwoFigures.Test
 
             // Act
             Triangle triangle = new Triangle(a, b, c);
-            bool isRightAngled = triangle.IsRightAngled();
+            bool isRightAngled = triangle.IsRectangular;
 
             // Assert
             Assert.True(isRightAngled);
@@ -106,7 +106,7 @@ namespace TwoFigures.Test
 
             // Act
             Triangle triangle = new Triangle(a, b, c);
-            bool isRightAngled = triangle.IsRightAngled();
+            bool isRightAngled = triangle.IsRectangular;
 
             // Assert
             Assert.False(isRightAngled);
