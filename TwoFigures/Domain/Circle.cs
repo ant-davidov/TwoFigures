@@ -8,32 +8,19 @@ using TwoFigures.Domain.Interfaces;
 
 namespace TwoFigures.Domain
 {
-    public record Circle : AbstractFigure
+    public sealed record Circle : AbstractFigure
     {
-        private double area = 0;
-        public double Radius { get; init; }
-        public override double Area
-        {
-            get
-            {
-                if (area == 0)
-                {
-                    area = CalculateArea();
-                    return area;
-                }
-                return area;
-            }
-        }
-
+        public double Radius { get; init; }      
         public Circle(double radius)
         {
             if (radius < 0) 
-                throw new ArgumentException("the radius cannot be less than zero");   
+                throw new ArgumentException("The radius cannot be less than zero");   
             Radius = radius;
         }
 
-        private double CalculateArea() 
+        protected override double CalculateArea() 
             => Math.PI * Math.Pow(Radius, 2);
 
     }
+
 }

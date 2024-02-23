@@ -8,25 +8,11 @@ using TwoFigures.Domain.Interfaces;
 
 namespace TwoFigures.Domain
 {
-    public record Triangle : AbstractFigure
-    {
-        private double area = 0;
+    public sealed record Triangle : AbstractFigure
+    { 
         public double A { get; init; }
         public double B { get; init; }
         public double C { get; init; }
-        public override double Area
-        {
-            get
-            {
-                if (area == 0)
-                {
-                    area = CalculateArea();
-                    return area;
-                }                               
-                return area;
-            }
-        }
-
         public Triangle(double a, double b, double c)
         {
             if (a < 0 || b < 0 || c < 0)
@@ -47,7 +33,7 @@ namespace TwoFigures.Domain
             return Math.Pow(sides[2], 2) == (Math.Pow(sides[0], 2) + Math.Pow(sides[1], 2));
         }
 
-        private double CalculateArea()
+        protected override double CalculateArea()
         {
             double halfP = (A + B + C) / 2;
             return Math.Sqrt(halfP * (halfP - A) * (halfP - B) * (halfP - C));

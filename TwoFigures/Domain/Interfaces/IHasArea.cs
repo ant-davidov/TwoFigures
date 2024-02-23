@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TwoFigures.Domain.Interfaces
 {
-    public interface IСalculateArea
+    public interface IHasArea
     {
         public double Area { get;}
     }
