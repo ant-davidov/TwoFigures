@@ -129,5 +129,28 @@ namespace TwoFigures.Test
             double calculatedArea = Math.Sqrt(s * (s - a) * (s - b) * (s - c));
             Assert.Equal(calculatedArea, area);
         }
+        [Fact]
+        public void Triangle_Constructor_ThrowsExceptionWhenSidesAreSoLargeNegative()
+        {
+            // Arrange
+            double a = double.MaxValue - Int16.MaxValue;
+            double b = double.MaxValue - Int16.MaxValue;
+            double c = double.MaxValue - Int16.MaxValue;
+
+            // Act & Assert
+            Assert.Throws<ArgumentException>(() => new Triangle(a, b, c));
+        }
+
+        [Theory]
+        [InlineData(double.Epsilon, double.Epsilon, double.Epsilon)]
+        [InlineData(double.Epsilon * 10, double.Epsilon * 10, double.Epsilon * 10)]
+        [InlineData(double.Epsilon * Int16.MaxValue, double.Epsilon * Int16.MaxValue, double.Epsilon * Int16.MaxValue)]
+        public void Triangle_Constructor_ThrowsExceptionWhenSidesAreSoSmallNegative(double a, double b, double c)
+        {
+           
+            // Act & Assert
+            Assert.Throws<ArgumentException>(() => new Triangle(a, b, c));
+        }
+
     }
 }

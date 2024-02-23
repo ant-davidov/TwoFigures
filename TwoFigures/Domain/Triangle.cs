@@ -20,13 +20,14 @@ namespace TwoFigures.Domain
         }
         public Triangle(double a, double b, double c)
         {
-            if (a < 0 || b < 0 || c < 0)
+            if (a < double.Epsilon || b < double.Epsilon || c < double.Epsilon)
                 throw new ArgumentException("The sides must be greater than 0");
             if (!IsExists(a,b,c))
                 throw new ArgumentException("Triangle cannot exist with such sides");
             A = a;
             B = b;
             C = c;
+            area = CalculateArea();
         }
 
         public static bool IsExists(double a, double b, double c) 
@@ -35,7 +36,14 @@ namespace TwoFigures.Domain
         protected override double CalculateArea()
         {
             double halfP = (A + B + C) / 2;
-            return Math.Sqrt(halfP * (halfP - A) * (halfP - B) * (halfP - C));
+            var result = Math.Sqrt(halfP * (halfP - A) * (halfP - B) * (halfP - C)); 
+
+            if (double.IsInfinity(result))
+                throw new ArgumentException("The sides are too big, it is impossible to calculate the area");
+            if (0.0 == result)
+                throw new ArgumentException("The sides are too small, it is impossible to calculate the area");
+
+            return result;
         }
         private bool IsRightAngled()
         {

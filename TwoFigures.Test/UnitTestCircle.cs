@@ -5,7 +5,6 @@ namespace TwoFigures.Test
     public class UnitTestCircle
     {
         [Theory]
-        [InlineData(0)]
         [InlineData(1)]
         [InlineData(5.5)]
         public void Circle_Radius_IsPositive(double radius)
@@ -18,6 +17,7 @@ namespace TwoFigures.Test
         }
 
         [Theory]
+        [InlineData(0)]
         [InlineData(-1)]
         [InlineData(-5.5)]
         public void Circle_Radius_ThrowsArgumentExceptionWhenNegative(double radius)
@@ -27,7 +27,6 @@ namespace TwoFigures.Test
         }
 
         [Theory]
-        [InlineData(0, 0)]
         [InlineData(1, Math.PI)]
         public void Circle_Area_IsPositive(double radius, double expectedArea)
         {
@@ -37,12 +36,29 @@ namespace TwoFigures.Test
             Assert.Equal(expectedArea, circle.Area);
         }
 
-       
-
         [Theory]
+        [InlineData(-231.21313231)]
         [InlineData(-1)]
         [InlineData(-5.5)]
-        public void CircleArea_ThrowsArgumentException_WhenNegativeRadius(double radius)
+        public void CircleArea_ThrowsArgumentException_WhenNegativeRadiusNegative(double radius)
+        {
+            // Assert
+            Assert.Throws<ArgumentException>(() => new Circle(radius).Area);
+        }
+
+        [Theory]
+        [InlineData(double.Epsilon)]
+        [InlineData(double.Epsilon * 10)]
+        [InlineData(double.Epsilon * Int16.MaxValue)]
+        public void CircleArea_ThrowsArgumentException_WhenRadiusSoSmallNegative(double radius)
+        {
+            // Assert
+            Assert.Throws<ArgumentException>(() => new Circle(radius).Area);
+        }
+
+        [Theory]
+        [InlineData(double.MaxValue - Int16.MaxValue)]
+        public void CircleArea_ThrowsArgumentException_WhenRadiusSoLargeNegative(double radius)
         {
             // Assert
             Assert.Throws<ArgumentException>(() => new Circle(radius).Area);
