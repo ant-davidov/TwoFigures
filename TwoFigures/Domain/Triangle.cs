@@ -23,7 +23,7 @@ namespace TwoFigures.Domain
             if (a < double.Epsilon || b < double.Epsilon || c < double.Epsilon)
                 throw new ArgumentException("The sides must be greater than 0");
             if (!IsExists(a,b,c))
-                throw new ArgumentException("Triangle cannot exist with such sides");
+                throw new InvalidOperationException("Triangle cannot exist with such sides");
             A = a;
             B = b;
             C = c;
@@ -39,9 +39,9 @@ namespace TwoFigures.Domain
             var result = Math.Sqrt(halfP * (halfP - A) * (halfP - B) * (halfP - C)); 
 
             if (double.IsInfinity(result))
-                throw new ArgumentException("The sides are too big, it is impossible to calculate the area");
+                throw new ArithmeticException("The sides are too big, it is impossible to calculate the area");
             if (0.0 == result)
-                throw new ArgumentException("The sides are too small, it is impossible to calculate the area");
+                throw new ArithmeticException("The sides are too small, it is impossible to calculate the area");
 
             return result;
         }

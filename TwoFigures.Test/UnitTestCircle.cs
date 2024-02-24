@@ -53,7 +53,7 @@ namespace TwoFigures.Test
         public void CircleArea_ThrowsArgumentException_WhenRadiusSoSmallNegative(double radius)
         {
             // Assert
-            Assert.Throws<ArgumentException>(() => new Circle(radius).Area);
+            Assert.Throws<ArithmeticException>(() => new Circle(radius).Area);
         }
 
         [Theory]
@@ -61,7 +61,7 @@ namespace TwoFigures.Test
         public void CircleArea_ThrowsArgumentException_WhenRadiusSoLargeNegative(double radius)
         {
             // Assert
-            Assert.Throws<ArgumentException>(() => new Circle(radius).Area);
+            Assert.Throws<ArithmeticException>(() => new Circle(radius).Area);
         }
     }
 }

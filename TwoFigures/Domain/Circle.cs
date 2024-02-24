@@ -23,9 +23,9 @@ namespace TwoFigures.Domain
         {
             var result = Math.PI * Math.Pow(Radius, 2);
             if (double.IsInfinity(result)) 
-                throw new ArgumentException("The radius is too large, it is impossible to calculate the area");
+                throw new ArithmeticException("The radius is too large, it is impossible to calculate the area");
             if (0.0 == result)
-                throw new ArgumentException("The radius is too small, it is impossible to calculate the area");
+                throw new ArithmeticException("The radius is too small, it is impossible to calculate the area");
             return result;
         }
     }

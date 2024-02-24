@@ -30,7 +30,7 @@ namespace TwoFigures.Test
             double c = 4;
 
             // Act & Assert
-            Assert.Throws<ArgumentException>(() => new Triangle(a, b, c));
+            Assert.Throws<InvalidOperationException>(() => new Triangle(a, b, c));
         }
 
         [Fact]
@@ -138,7 +138,7 @@ namespace TwoFigures.Test
             double c = double.MaxValue - Int16.MaxValue;
 
             // Act & Assert
-            Assert.Throws<ArgumentException>(() => new Triangle(a, b, c));
+            Assert.Throws<ArithmeticException>(() => new Triangle(a, b, c));
         }
 
         [Theory]
@@ -149,7 +149,7 @@ namespace TwoFigures.Test
         {
            
             // Act & Assert
-            Assert.Throws<ArgumentException>(() => new Triangle(a, b, c));
+            Assert.Throws<ArithmeticException>(() => new Triangle(a, b, c));
         }
 
     }
